@@ -1,40 +1,64 @@
 import { link } from "fs";
 import Link from "next/link";
 import React from "react";
+import Menu from "./Menu";
+import Cart from "./Cart";
 
 const links = [
-    {
-        id: 1,
-        title: "Home",
-        url: "/home"
-    },
-    {
-        id: 1,
-        title: "orders",
-        url: "/orders"
-    },
-    {
-        id: 1,
-        title: "🛒",
-        url: "/cart"
-    },
-    {
-        id: 1,
-        title: "Login",
-        url: "/login"
-    }
-]
+  {
+    id: 1,
+    title: "Home",
+    url: "/home",
+  },
+  {
+    id: 2,
+    title: "Menu",
+    url: "/menu",
+  },
+  {
+    id: 3,
+    title: "Orders",
+    url: "/orders",
+  },
+  {
+    id: 4,
+    title: "Contact",
+    url: "/contact",
+  }
+];
 
 const Navbar = () => {
-    return (
-        <nav>
-            <div>
-                <Link href={"/"}>
-                {}
-                </Link>
-            </div>
-        </nav>
-    );
+  return (
+    <nav className="flex items-center justify-between p-2 bg-amber-200 shadow-md">
+      <div className="font-bold text-amber-950 font-serif text-3xl mx-5">
+        yum|
+        <span className="text-amber-50 [text-shadow:1px_0px_0px_#000,1px_1px_0px_#000]">
+          resto
+        </span>
+      </div>
+
+      {/* Mobile Menu */}
+      <div className="md:hidden">
+        <Menu />
+      </div>
+
+      {/* Desktop */}
+      <div className="hidden md:flex gap-8 font-semibold font-sans text-lg mx-3">
+        {links.map((link) => (
+          <Link
+            key={link.id}
+            href={link.url}
+            className="hover:text-amber-500 transition-all"
+          >
+            {link.title}
+          </Link>
+        ))}
+        <Link href={"/cart"}>
+          <Cart />
+        </Link>
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;

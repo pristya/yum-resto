@@ -8,7 +8,7 @@ const links = [
   {
     id: 1,
     title: "Home",
-    url: "/home",
+    url: "/",
   },
   {
     id: 2,
@@ -24,10 +24,12 @@ const links = [
     id: 4,
     title: "Contact",
     url: "/contact",
-  }
+  },
 ];
 
 const Navbar = () => {
+  const user = false;
+
   return (
     <nav className="flex items-center justify-between p-2 bg-amber-200 shadow-md">
       <div className="font-bold text-amber-950 font-serif text-3xl mx-5">
@@ -43,19 +45,30 @@ const Navbar = () => {
       </div>
 
       {/* Desktop */}
-      <div className="hidden md:flex gap-8 font-semibold font-sans text-lg mx-3">
+      <div className="hidden md:flex gap-6 font-semibold font-sans text-lg mx-4">
         {links.map((link) => (
           <Link
             key={link.id}
             href={link.url}
             className="hover:text-amber-500 transition-all"
           >
-            {link.title}
+            {link.title} |
           </Link>
         ))}
-        <Link href={"/cart"}>
+        {!user ? (
+          <Link href={"/login"} className="hover:text-amber-500">
+            {" "}
+            Login |
+          </Link>
+        ) : (
+          <Link href={"/orders"} className="hover:text-amber-500">
+            {" "}
+            Orders{" "}
+          </Link>
+        )}
+        <div className="hover:text-amber-500">
           <Cart />
-        </Link>
+        </div>
       </div>
     </nav>
   );

@@ -9,7 +9,7 @@ const links = [
   {
     id: 1,
     title: "Home",
-    url: "/home",
+    url: "/",
   },
   {
     id: 2,
@@ -43,7 +43,7 @@ const Menu = () => {
 
       {/* Mobile Content */}
       {open && (
-        <div className="bg-amber-950 mt-10 text-white absolute left-0 top-16 w-full h-[calc(100vh-6rem)] flex flex-col items-center justify-center gap-8 text-3xl z-50 ">
+        <div className="bg-amber-950 mt-9 text-white absolute left-0 top-16 w-full h-[calc(100vh-6rem)] flex flex-col items-center justify-center gap-8 text-3xl z-50 ">
           {links.map((link) => (
             <Link
               key={link.id}
@@ -65,9 +65,9 @@ const Menu = () => {
               Orders{" "}
             </Link>
           )}
-          <Link href={"/cart"} className="hover:text-amber-500 underline">
+          <div className="hover:text-amber-500 underline">
             <Cart />
-          </Link>
+          </div>
         </div>
       )}
     </div>

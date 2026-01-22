@@ -17,11 +17,6 @@ const links = [
   },
   {
     id: 3,
-    title: "Orders",
-    url: "/orders",
-  },
-  {
-    id: 4,
     title: "Contact",
     url: "/contact",
   },
@@ -32,7 +27,7 @@ const Navbar = () => {
 
   return (
     <nav className="flex items-center justify-between p-2 bg-amber-200 shadow-md">
-      <div className="font-bold text-amber-950 font-serif text-3xl mx-5">
+      <div className="font-bold text-gray-900 font-serif text-3xl mx-5">
         yum|
         <span className="text-amber-50 [text-shadow:1px_0px_0px_#000,1px_1px_0px_#000]">
           resto

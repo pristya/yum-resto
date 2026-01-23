@@ -1,8 +1,11 @@
 import React from "react";
+import Featured from "../../../components/Featured";
 
 const MenuPage = () => {
     return (
-        <div>Menu Page </div>
+        <main className="">
+            <Featured isFullPage={true} />
+        </main>
     );
 };
 

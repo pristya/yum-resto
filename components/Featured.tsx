@@ -1,14 +1,14 @@
 "use client";
-import featuredProducts from "@/app/data";
+import { featuredProducts } from "@/app/data";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 
-const Featured = () => {
+const Featured = ({ isFullPage = false }) => {
 
+  // Filter berdasarkan id, klo tidak akan menampilkan semua
     const favProducts = [1, 3, 5, 6, 8, 16];
-    const displayProducts = featuredProducts.filter((item) => (
-        favProducts.includes(item.id)
-    ));
+    const displayProducts = isFullPage ? featuredProducts : featuredProducts.filter((item) => favProducts.includes(item.id));
 
   return (
     <div className="container mx-auto my-14 px-6">
@@ -19,7 +19,7 @@ const Featured = () => {
       {/* Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
         {displayProducts.map((item) => (
-          <div key={item.id} className="group cursor-pointer">
+          <Link href={`/product/${item.id}`} key={item.id} className="group cursor-pointer block">
             {/* Image Container */}
             <div className="relative w-full h-64 md:h-72 overflow-hidden rounded-2xl shadow-lg transition-all duration-300 group-hover:shadow-2xl">
               <Image
@@ -46,7 +46,7 @@ const Featured = () => {
               </h3>
               <p className="text-sm text-gray-500 line-clamp-2">{item.desc}</p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

@@ -26,10 +26,10 @@ const Navbar = () => {
   const user = false;
 
   return (
-    <nav className="flex items-center justify-between p-2 bg-amber-200 shadow-md">
+    <nav className="flex items-center justify-between p-2 bg-amber-400 shadow-md">
       <div className="font-bold text-gray-900 font-serif text-3xl mx-5">
         yum|
-        <span className="text-amber-50 [text-shadow:1px_0px_0px_#000,1px_1px_0px_#000]">
+        <span className="text-amber-100 [text-shadow:1px_0px_0px_#000,1px_1px_0px_#000]">
           resto
         </span>
       </div>
@@ -45,23 +45,23 @@ const Navbar = () => {
           <Link
             key={link.id}
             href={link.url}
-            className="hover:text-amber-500 transition-all"
+            className="hover:text-amber-100 transition-all"
           >
             {link.title} |
           </Link>
         ))}
         {!user ? (
-          <Link href={"/login"} className="hover:text-amber-500">
+          <Link href={"/login"} className="hover:text-amber-100">
             {" "}
             Login |
           </Link>
         ) : (
-          <Link href={"/orders"} className="hover:text-amber-500">
+          <Link href={"/orders"} className="hover:text-amber-100">
             {" "}
             Orders{" "}
           </Link>
         )}
-        <div className="hover:text-amber-500">
+        <div className="hover:text-amber-100">
           <Cart />
         </div>
       </div>

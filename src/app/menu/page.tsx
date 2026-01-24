@@ -3,7 +3,7 @@ import Featured from "../../../components/Featured";
 
 const MenuPage = () => {
     return (
-        <main className="">
+        <main>
             <Featured isFullPage={true} />
         </main>
     );

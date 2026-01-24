@@ -51,7 +51,7 @@ const Slider = () => {
         <div className="flex gap-4">
           <Link
             href={"/menu"}
-            className="bg-amber-400 hover:bg-amber-200 text-white font-bold py-4 px-10 rounded-sm transition-all duration-300 transform hover:scale-105 shadow-lg shadow-amber-400/20 text-shadow-xs text-shadow-gray-900"
+            className="bg-amber-400 hover:bg-amber-700 text-white font-bold py-4 px-10 rounded-sm transition-all duration-300 transform hover:scale-105 shadow-lg shadow-amber-400/20 text-shadow-xs text-shadow-gray-900"
           >
             Pesan Sekarang
           </Link>

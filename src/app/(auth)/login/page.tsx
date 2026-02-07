@@ -42,7 +42,7 @@ const LoginPage = () => {
 
             <p className="text-xs text-center mt-5 font-bold">login with </p>
             <div className="flex gap-2 mt-2 justify-center font-medium">
-              <button className="flex ring-1 ring-blue-100 bg-white rounded-2xl px-1 hover:ring-blue-500 transition-all transform hover:scale-105 shadow-lg">
+              <button className="flex ring-1 ring-gray-100 bg-white rounded-2xl px-1 hover:ring-blue-400 transition-all transform hover:scale-105 shadow-lg">
                 <Image
                   src={"/logo/fb.png"}
                   alt=""
@@ -52,7 +52,7 @@ const LoginPage = () => {
                 />
                 <span className="pr-2 pl-1 pt-1 text-xs">facebook</span>
               </button>
-              <button className="flex ring-1 ring-blue-100 bg-white rounded-2xl px-1 hover:ring-blue-500 transition-all transform hover:scale-105 shadow-lg">
+              <button className="flex ring-1 ring-gray-100 bg-white rounded-2xl px-1 hover:ring-blue-400 transition-all transform hover:scale-105 shadow-lg">
                 <Image
                   src={"/logo/google.png"}
                   alt=""
@@ -64,10 +64,10 @@ const LoginPage = () => {
               </button>
             </div>
 
-            <p className="font-light text-xs pt-5">
+            <p className="font-medium text-xs pt-5">
               Belum punya akun?
               <a href="/register" className="px-1 text-blue-400 font-medium hover:text-blue-700">
-                daftar disini!
+                sign in
               </a>
             </p>
           </div>
